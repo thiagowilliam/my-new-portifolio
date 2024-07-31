@@ -68,9 +68,16 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
             @ {experience.companyName}
           </a>
           <h4 className="text-gray-300">{experience.role}</h4>
-          <span className="text-gray-500">
-          {formattedStartDate} • {formattedEndDate} • ({formattedDuration})
-          </span>
+          {experience.endDate ? (
+            <span className="text-gray-500">
+            {formattedStartDate} • {formattedEndDate} • ({formattedDuration})
+            </span>
+          ) : (
+            <span className="text-gray-500">
+              {formattedStartDate} • {formattedEndDate}
+            </span>
+          ) }
+          
           <div className="text-gray-400">
             <RichText content={experience.description.raw} />
           </div>
@@ -79,7 +86,7 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
         <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
           Competências
         </p>
-        <div className="flex gap-x-2 flex-wrap lg:max-w-[350px] mb-8">
+        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
           {experience?.technologies.map((tech, i) => (
             <TechBadge 
               key={`experience-${experience.companyName}-tech-${tech.name}`} 

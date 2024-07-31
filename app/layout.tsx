@@ -9,8 +9,8 @@ import { Toaster } from "./components/toaster";
 
 export const metadata = {
   title: {
-    default: 'Home | TWS Dev',
-    template: '%s | TWS Dev',
+    default: 'Home | TW Dev',
+    template: '%s | TW Dev',
   },
   icons: [
     {
