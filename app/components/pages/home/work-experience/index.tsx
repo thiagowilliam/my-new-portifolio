@@ -1,5 +1,6 @@
 import { SectionTitle } from "@/app/components/section-title";
 import { ExperienceItem } from "./experience-item";
+// biome-ignore lint/style/useImportType: <explanation>
 import { WorkExperience as IWorkExperience } from "@/app/types/work-experience";
 
 type WorkExperienceProps = {
